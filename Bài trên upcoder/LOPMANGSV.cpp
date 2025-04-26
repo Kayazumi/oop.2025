@@ -1,4 +1,11 @@
-﻿int n;      // Số lượng sinh viên
+﻿#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+
+class MangSinhVien{
+    int n;      // Số lượng sinh viên
 public:
     // Phương thức khởi tạo
     MangSinhVien(int _n = 0) : n(_n) {}
