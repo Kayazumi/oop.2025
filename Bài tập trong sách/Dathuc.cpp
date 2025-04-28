@@ -245,6 +245,7 @@ int main() {
 
     cout << "He so cua x^2 trong da thuc thu nhat: " << dt1[1] << endl;
     cout << endl;
-
+    cout << "Da thuc thu nhat sau khi giam tat ca he so di 1: " << --dt1 << endl;
+    cout << "Da thuc thu hai sau khi giam tat ca he so di 1: " << --dt2 << endl;
     return 0;
 }
