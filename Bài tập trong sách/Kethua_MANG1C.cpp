@@ -1,8 +1,8 @@
 ﻿#include <iostream>
 using namespace std;
 
-// Lớp MANGIC
-class MANGIC {
+// Lớp MANG1C
+class MANG1C {
 protected:
     int sopt;       // Số phần tử
     int data[100];  // Mảng tối đa 100 số nguyên
@@ -12,16 +12,16 @@ public:
     int getData(int idx) { return data[idx]; };
     void setData(int idx, int value) { data[idx] = value; };
 
-    MANGIC(int _sopt = -1) { sopt = _sopt; };
-    MANGIC(const MANGIC& m) {
+    MANG1C(int _sopt = -1) { sopt = _sopt; };
+    MANG1C(const MANG1C& m) {
         sopt = m.sopt;
         for (int i = 0; i <= sopt; i++) {
             data[i] = m.data[i];
         }
     };
-    ~MANGIC() {}
+    ~MANG1C() {}
 
-    friend istream& operator>>(istream& in, MANGIC& m) {
+    friend istream& operator>>(istream& in, MANG1C& m) {
         in >> m.sopt;
         for (int i = 0; i < m.sopt; i++) {
             in >> m.data[i];
@@ -29,7 +29,7 @@ public:
         return in;
     }
 
-    friend ostream& operator<<(ostream& out, MANGIC m) {
+    friend ostream& operator<<(ostream& out, MANG1C m) {
         for (int i = 0; i < m.sopt; i++) {
             out << m.data[i] << " ";
         }
@@ -39,10 +39,10 @@ public:
 };
 
 // Lớp STACK kế thừa MANGIC
-class STACK : public MANGIC {
+class STACK : public MANG1C {
 public:
-    STACK() : MANGIC() {}
-    STACK(const STACK& s) : MANGIC(s) {}
+    STACK() : MANG1C() {}
+    STACK(const STACK& s) : MANG1C(s) {}
     ~STACK() {
         cout << endl;
     }
@@ -72,12 +72,12 @@ public:
     }
 
     friend istream& operator>>(istream& in, STACK& s) {
-        in >> (MANGIC&)s;
+        in >> (MANG1C&)s;
         return in;
     }
 
     friend ostream& operator<<(ostream& out, STACK s) {
-        out << (MANGIC&)s;
+        out << (MANG1C&)s;
         return out;
     }
 };
