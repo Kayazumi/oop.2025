@@ -202,7 +202,7 @@ public:
     // Hậu tố ++
     DaThuc operator++(int) {
         DaThuc temp = *this;
-        ++(*this);
+        ++temp;
         return temp;
     }
 
@@ -217,7 +217,7 @@ public:
     // Hậu tố --
     DaThuc operator--(int) {
         DaThuc temp = *this;
-        --(*this);
+        --temp;
         return temp;
     }
 };
