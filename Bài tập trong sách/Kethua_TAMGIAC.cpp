@@ -85,12 +85,20 @@ public:
 
     // Phương thức nhập tam giác đều
     void input() {
-        double canh; 
-        cout << "Nhap do dai canh cua tam giac deu: ";
-        cin >> canh;
-        setCanh(canh); 
+        do {
+            cout << "Nhap do dai 3 canh cua tam giac:" << endl;
+            cout << "Nhap canh a: ";
+            cin >> a;
+            cout << "Nhap canh b: ";
+            cin >> b;
+            cout << "Nhap canh c: ";
+            cin >> c;
+    
+            if (!kiemTraHopLe(a, b, c)) {
+                cout << "Ba canh nhap vao khong tao thanh tam giac. Vui long nhap lai." << endl;
+            }
+        } while (!kiemTraHopLe(a, b, c));
     }
-
     // Toán tử nhập >>
     friend istream& operator>>(istream& is, TamGiacDeu& tg) {
         tg.input();
@@ -111,10 +119,15 @@ public:
     }
 };
 
-
 int main() {
-    TamGiacDeu tg; 
-    cin >> tg; 
-    cout << tg; 
+    TamGiacDeu tg;
+    tg.input();
+    
+    if (kiemTraHopLe(tg.getA(), tg.getB(), tg.getC())) {
+        cout << tg;
+    } else {
+        cout << "Tam giac khong hop le." << endl;
+    }
+
     return 0;
 }
